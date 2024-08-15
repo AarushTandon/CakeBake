@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CakeBake | Best Bakery Website</title>
+   <style>/* Css Reset */
+    *{
+    
+        margin: 0;
+        padding: 0;
+    }
+    html
+    {
+        scroll-behavior: smooth;
+    }
+    
+    /* Navigation Bar */
+    #navbar
+    {
+        display: flex;
+        position: sticky;
+        align-items: center;
+        list-style: none;
+        top: 0;
+        
+    
+    
+    }
+    #navbar::before
+    {
+        content: "";
+        background-color: black;
+        opacity: 0.7;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+    }
+    /* logo and image */
+    #logo
+    {
+        margin: 24px 25px;
+    }
+    #logo img
+    {
+     
+        height: 60px;
+        margin: 3px 5px;
+        padding: 1px 10px;
+    
+    }
+    #navbar ul
+    { 
+        list-style: none;
+        display: flex;
+        
+        
+    }
+    #navbar ul li a
+    { 
+        display: block;
+        color: white;
+        text-decoration: none;
+        border-radius: 20px;
+        padding: 3px 20px;
+        font-size: 1.3rem;
+    }
+    #navbar ul li a:hover
+    { 
+        display: block;
+        color: black;
+        background-color: white;
+        text-decoration: none;
+        border-radius: 20px;
+        padding: 3px 20px;
+    }
+    #home
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 628px;
+        background: url(../static/cover3.jpg) no-repeat center center/cover;
+    }
+    
+    #home::before
+    {
+        content: "";
+        opacity: 0.89;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        height: 628px;
+        width: 100%;
+    }
+    #home h1
+    {
+        color: black;
+    }
+    #home p
+    {
+        color: black;
+        font-size: 1.8rem;
+        font-family: 'Cabin', sans-serif;
+        
+    }
+    .btn:hover
+    {
+        background-color:burlywood;
+        color: black;
+        cursor: pointer;
+    }
+    /* services section */
+    
+    #services 
+    {
+        
+        display: flex;
+      
+    }
+    
+    #services .boxes
+    {
+        border: 2px solid brown;
+        padding: 34px;
+        margin: 2px 55px;
+        border-radius: 28px;
+        background: #f2f2f2;    
+        margin-bottom: 20px;
+        background: url(../static/cover4.jpg) no-repeat center center/cover;
+    }
+    #services .boxes img
+    { display: block;
+        margin: auto;
+        height:150px ;
+    }
+    
+    /* Products */
+    #product
+    {
+    
+        display: flex;
+        width: 100vd;
+        background: url(../static/cover3.jpg) no-repeat center center/cover;
+    }
+    
+    .Products img
+    {
+        margin: 29px;
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 13px;
+        height: 225px;
+        width: 275px;
+    }
+    
+    /* footer */
+    footer
+    {
+        background-color: black;
+        color: white;
+    }
+    /* Utility class */
+    .h-primary
+    {
+        color: black;
+        font-size:3.5rem ;
+        padding: 20px;
+        
+    }
+   
+    .h-secondary
+    {
+        color: black;
+        font-size:2.5rem ;
+        padding: 20px;
+    }
+    .btn
+    {
+    margin: 10px;
+    padding: 5px;
+    border-radius: 13px;
+    border: 2px solid black;
+    font-size: 1.1 rem;
+    }
+    .center
+    { 
+        text-align: center;
+    }
+    </style>
+
+</head>
+
+<body>
+    {% csrf_token %}
+    {% load static %}
+    <nav id="navbar">
+        <div id="logo">
+            <img src="../static/logo.png" alt="GourmetGala.com">
+        </div>
+        <ul>
+            <li class="item"><a href="#home">Home</a></li>
+            <li class="item"><a href="#container">Services</a></li>
+            <li class="item"><a href="#product section">Our Products</a></li>
+        </ul>
+    </nav>
+    <section id="home">
+        <h1 class="h-primary">WELCOME TO CAKEBAKE</h1>
+        <p>Welcome to CakeBake, your one-stop shop for everything delicious! We handcraft irresistible treats using only the finest ingredients, from flaky croissants and fluffy cakes to decadent pastries and artisan breads. Let the aroma of freshly baked goodness guide you through our website and discover a world of sweet and savory delights!
+        </p>
+        <button class="btn">Order Now</button>
+    </section>
+
+    <section id="container">
+        <h1 class="h-primary center">Our Services</h1>
+        <div id="services">
+            <div class="boxes">
+                <img src="{% static 'cake1.png' %}" alt="">
+                <h2 class="h-secondary center">Order Cakes</h2>
+                <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repudiandae nam
+                    similique modi facere iure maiores error saepe non architecto!</p>
+            </div>
+            <div class="boxes">
+                <img src="{% static 'cake3.png' %}" alt="">
+                <h2 class="h-secondary center">Customize Cakes</h2>
+                <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repudiandae nam
+                    similique modi facere iure maiores error saepe non architecto!</p>
+            </div>
+            <div class="boxes">
+                <img src="{% static 'cake2.png' %}" alt="">
+                <h2 class="h-secondary center">Deliver Cakes</h2>
+                <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repudiandae nam
+                    similique modi facere iure maiores error saepe non architecto!</p>
+            </div>
+
+        </div>
+    </section>
+    <section id="product section">
+        <h1 class="h-primary center">Our Products</h1>
+        <div id="product">
+            <div class="Products"><img src="{% static 'bakery.jfif.jpg' %}" alt="Company Logo"></div>
+            <div class="Products"><img src="{% static 'brownie1.jpg' %}" alt="Company Logo"></div>
+            <div class="Products"><img src="{% static 'cookie.jfif.jpg' %}" alt="Company Logo"></div>
+            <div class="Products"><img src="{% static 'cupcake.jfif.jpg' %}" alt="Company Logo"></div>
+            <div class="Products"><img src="{% static 'donut.avif' %}" alt="Company Logo"></div>
+
+        </div>
+
+    <footer class="center">
+        Copyright &copy; CakeBake.com  All rights reserverd.
+    </footer>
+</body>
+
+</html>
